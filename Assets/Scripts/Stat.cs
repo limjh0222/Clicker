@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Stat
 {
     public float waitSeconds { get; set; } = 2f;
