@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class AutoCount : MonoBehaviour
 {
-    [SerializeField] private float waitSeconds = 2;
-
     private void Start()
     {
         StartCoroutine(AutoCounting());
@@ -14,9 +12,9 @@ public class AutoCount : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(waitSeconds);
+            yield return new WaitForSeconds(GameManager.Instance.Stat.waitSeconds);
 
-            GameManager.Instance.Count++;
+            GameManager.Instance.Count += GameManager.Instance.Stat.autoCount;
         }
     }
 }
