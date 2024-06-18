@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {  get { return instance; } }
 
     public int Count { get; set; }
+    public Stat Stat { get; set; }
 
     private void Awake()
     {
@@ -21,5 +23,7 @@ public class GameManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        Stat = new Stat();
     }
 }
